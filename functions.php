@@ -9,6 +9,8 @@ require_once( get_template_directory() . '/lib/init.php' );
 add_action( 'beans_uikit_enqueue_scripts', 'beans_child_enqueue_uikit_assets' );
 
 function beans_child_enqueue_uikit_assets() {
+	// Enqueue uikit overwrite theme folder
+	beans_uikit_enqueue_theme( 'bench', get_stylesheet_directory_uri() . '/assets/less/uikit' );
 
 	beans_compiler_add_fragment( 'uikit', get_stylesheet_directory_uri() . '/assets/less/style.less', 'less' );
 

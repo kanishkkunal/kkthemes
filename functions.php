@@ -10,7 +10,7 @@ add_action( 'beans_uikit_enqueue_scripts', 'beans_child_enqueue_uikit_assets' );
 
 function beans_child_enqueue_uikit_assets() {
 	// Enqueue uikit overwrite theme folder
-	beans_uikit_enqueue_theme( 'bench', get_stylesheet_directory_uri() . '/assets/less/uikit' );
+	beans_uikit_enqueue_theme( 'kkthemes', get_stylesheet_directory_uri() . '/assets/less/uikit' );
 
 	beans_compiler_add_fragment( 'uikit', get_stylesheet_directory_uri() . '/assets/less/style.less', 'less' );
 
@@ -25,7 +25,7 @@ function kktheme_init() {
 
 	remove_post_type_support( 'page', 'comments' );
 	// Register additional menus, we already have a Primary menu registered
-	register_nav_menu('social-menu', __( 'Social Menu', 'bench'));
+	register_nav_menu('social-menu', __( 'Social Menu', 'kkthemes'));
 }
 
 
@@ -76,5 +76,9 @@ function kkthemes_site_title_tag() {
 }
 
 function kkthemes_edit_link() {
-		edit_post_link( __( 'Edit', 'bench' ), '<div class="uk-margin-bottom-small uk-text-small uk-align-right"><i class="uk-icon-pencil-square-o"></i> ', '</div>' );
+		edit_post_link( __( 'Edit', 'kkthemes' ), '<div class="uk-margin-bottom-small uk-text-small uk-align-right"><i class="uk-icon-pencil-square-o"></i> ', '</div>' );
 }
+
+
+/* Customize Jetpack */
+require 'include/jetpack-custom.php';

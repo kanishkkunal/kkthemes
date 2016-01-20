@@ -3,21 +3,29 @@
 
 
 @breadcrumb-divider:                            "\f054";
-@breadcrumb-disabled-color:                     #aaa;
+@breadcrumb-disabled-color:                     #999;
 @breadcrumb-link-color:                         #777;
 @breadcrumb-link-hover-color:                         #555;
 
-.uk-breadcrumb > li > a {
+.tm-breadcrumbs {
+  color: @breadcrumb-disabled-color;
+}
+
+.uk-breadcrumb > li > a, .tm-breadcrumbs a {
   color: @breadcrumb-link-color;
   font-weight: bold;
 }
 
-.uk-breadcrumb > li > a:hover {
+.uk-breadcrumb > li > a:hover, .tm-breadcrumbs a:hover {
   color: @breadcrumb-link-hover-color;
 }
 
-.uk-breadcrumb > li:nth-child(n+2):before {
+.uk-breadcrumb > li:nth-child(n+2):before, .tm-breadcrumbs a:after {
+  content: @breadcrumb-divider;
   font-family: FontAwesome;
   font-size: 12px;
+  font-weight: normal;
   color: @breadcrumb-disabled-color;
+  display: inline-block;
+  margin: 0 7px 0 8px;
 }

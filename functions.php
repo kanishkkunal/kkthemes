@@ -41,7 +41,7 @@ add_action( 'wp', 'kkthemes_setup_document' );
 function kkthemes_setup_document() {
 
 	// Remove Beans breadcrumb
-	//beans_remove_action('beans_breadcrumb');
+	beans_remove_action('beans_breadcrumb');
 	// Remove custom Breadcrumb
 	beans_add_smart_action('beans_header_after_markup', 'kktheme_breadcrumb');
 
@@ -91,7 +91,7 @@ function kkthemes_site_title_tag() {
 
 function kktheme_breadcrumb() {
 	if ( function_exists('yoast_breadcrumb') && !is_home() ) {
-		yoast_breadcrumb('<div class="uk-container uk-container-center"><p class="uk-margin-top" id="breadcrumbs">','</p></div>');
+		yoast_breadcrumb('<div class="uk-container uk-container-center"><p class="uk-margin-top tm-breadcrumbs">','</p></div>');
 	}
 }
 

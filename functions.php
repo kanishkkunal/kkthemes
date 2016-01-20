@@ -51,9 +51,12 @@ function kkthemes_setup_document() {
 
 	if ( is_user_logged_in() ) {
 		//Add edit post link when user is logged in
-		if( is_singular() )
-			beans_add_smart_action('beans_post_header_before_markup', 'kkthemes_edit_link');
+		//if( is_singular() )
+			//beans_add_smart_action('beans_post_header_before_markup', 'kkthemes_edit_link');
 	}
+
+	//Content
+	beans_remove_attribute('beans_post', 'class', 'uk-panel-box');
 
 	// Only applies to singular and not pages
 	if ( is_singular() && !is_page() ) {

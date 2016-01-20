@@ -3,6 +3,9 @@
 // Include Beans. Do not remove the line below.
 require_once( get_template_directory() . '/lib/init.php' );
 
+/* Custom Post types */
+require 'include/post-types.php';
+
 /*
  * Add our theme style
  */
@@ -22,7 +25,10 @@ function beans_child_enqueue_uikit_assets() {
 beans_add_smart_action( 'init', 'kktheme_init' );
 
 function kktheme_init() {
+	//create custom post types
+	kkthemes_create_post_types();
 
+	//remove support of comments from page post type.
 	remove_post_type_support( 'page', 'comments' );
 	// Register additional menus, we already have a Primary menu registered
 	register_nav_menu('social-menu', __( 'Social Menu', 'kkthemes'));
@@ -34,10 +40,10 @@ add_action( 'wp', 'kkthemes_setup_document' );
 
 function kkthemes_setup_document() {
 
-	// Breadcrumb
-	beans_modify_action_hook('beans_breadcrumb', 'beans_header_after_markup');
-	beans_remove_attribute('beans_breadcrumb', 'class', 'uk-width-1-1');
-	beans_add_attribute('beans_breadcrumb', 'class', 'uk-container uk-container-center');
+	// Remove Beans breadcrumb
+	//beans_remove_action('beans_breadcrumb');
+	// Remove custom Breadcrumb
+	beans_add_smart_action('beans_header_after_markup', 'kktheme_breadcrumb');
 
 	// Frontpage
 	if ( is_home() ) {
@@ -81,6 +87,12 @@ function kkthemes_site_title_tag() {
 		echo beans_output( 'kkthemes_site_title_tag_text', $description );
 
 	echo beans_close_markup( 'kkthemes_site_title_tag', 'div' );
+}
+
+function kktheme_breadcrumb() {
+	if ( function_exists('yoast_breadcrumb') && !is_home() ) {
+		yoast_breadcrumb('<div class="uk-container uk-container-center"><p class="uk-margin-top" id="breadcrumbs">','</p></div>');
+	}
 }
 
 function kkthemes_edit_link() {

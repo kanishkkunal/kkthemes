@@ -64,8 +64,14 @@ function kkthemes_setup_document() {
 	//Content
 	beans_remove_attribute('beans_post', 'class', 'uk-panel-box');
 
-	// Only applies to singular and not pages
-	if ( is_singular() && !is_page() ) {
+	// applies to singular
+	if( is_singular()) {
+		beans_add_attribute('beans_post', 'class', 'tm-centered-content ');
+
+			// Only applies to singular and not pages
+		if( !is_page() ) {
+
+		}
 	}
 }
 

@@ -5,7 +5,7 @@ function kkthemes_create_post_types() {
   kkthemes_create_themes_type();
   kkthemes_create_plugins_type();
 
-  flush_rewrite_rules();
+  //flush_rewrite_rules();
 }
 
 // Register Custom Theme Post Type

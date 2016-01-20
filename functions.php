@@ -34,6 +34,9 @@ add_action( 'wp', 'kkthemes_setup_document' );
 
 function kkthemes_setup_document() {
 
+	// Remove the breadcrumb.
+	add_filter( 'beans_pre_load_fragment_breadcrumb', '__return_true' );
+
 	// Frontpage
 	if ( is_home() ) {
 		beans_add_smart_action('beans_header_after_markup', 'kkthemes_site_title_tag');

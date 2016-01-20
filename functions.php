@@ -30,6 +30,7 @@ function kktheme_init() {
 
 	//remove support of comments from page post type.
 	remove_post_type_support( 'page', 'comments' );
+	add_post_type_support('page', 'excerpt' );
 	// Register additional menus, we already have a Primary menu registered
 	register_nav_menu('social-menu', __( 'Social Menu', 'kkthemes'));
 }
@@ -63,16 +64,6 @@ function kkthemes_setup_document() {
 
 	//Content
 	beans_remove_attribute('beans_post', 'class', 'uk-panel-box');
-
-	// applies to singular
-	if( is_singular()) {
-		beans_add_attribute('beans_post', 'class', 'tm-centered-content ');
-
-			// Only applies to singular and not pages
-		if( !is_page() ) {
-
-		}
-	}
 }
 
 

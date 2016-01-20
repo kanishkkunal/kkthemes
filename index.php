@@ -17,7 +17,7 @@ function kkthemes_index_setup_document() {
 	beans_add_attribute( 'beans_content', 'class', 'tm-posts-grid uk-grid uk-grid-width-small-1-2 uk-grid-width-medium-1-2' );
 	beans_add_attribute( 'beans_content', 'data-uk-grid-margin', '' );
 	beans_add_attribute( 'beans_content', 'data-uk-grid-match', "{target:'.uk-panel'}" );
-	beans_wrap_inner_markup( 'beans_post_body', 'flipster_post_panel', 'div', array(
+	beans_wrap_inner_markup( 'beans_post_body', 'kkthemes_post_panel', 'div', array(
 	  'class' => 'uk-panel uk-panel-box'
 	) );
 

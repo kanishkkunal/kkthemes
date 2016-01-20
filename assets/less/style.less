@@ -64,10 +64,8 @@ body {
 
 /* Content
  ========================================================================== */
-.tm-centered-content {
+.tm-maxwidth-content {
 	max-width: 800px;
-	margin-right: auto;
-	margin-left: auto;
 }
 
 .tm-article-content {
@@ -97,4 +95,20 @@ body {
 			border-radius: 0;
 		}
 	}
+}
+
+/* Additional Styling
+============================================================================ */
+textarea {
+  width: 100%;
+}
+
+.tm-branded-panel {
+  background: @global-primary-color;
+  color: #fff;
+
+  h1, h2, h3 {
+    color: #fff;
+    font-weight: bold;
+  }
 }

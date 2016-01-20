@@ -34,8 +34,10 @@ add_action( 'wp', 'kkthemes_setup_document' );
 
 function kkthemes_setup_document() {
 
-	// Remove the breadcrumb.
-	add_filter( 'beans_pre_load_fragment_breadcrumb', '__return_true' );
+	// Breadcrumb
+	beans_modify_action_hook('beans_breadcrumb', 'beans_header_after_markup');
+	beans_remove_attribute('beans_breadcrumb', 'class', 'uk-width-1-1');
+	beans_add_attribute('beans_breadcrumb', 'class', 'uk-container uk-container-center');
 
 	// Frontpage
 	if ( is_home() ) {

@@ -1,0 +1,23 @@
+// Variables
+// ========================================================================
+
+
+@breadcrumb-divider:                            "\f054";
+@breadcrumb-disabled-color:                     #aaa;
+@breadcrumb-link-color:                         #777;
+@breadcrumb-link-hover-color:                         #555;
+
+.uk-breadcrumb > li > a {
+  color: @breadcrumb-link-color;
+  font-weight: bold;
+}
+
+.uk-breadcrumb > li > a:hover {
+  color: @breadcrumb-link-hover-color;
+}
+
+.uk-breadcrumb > li:nth-child(n+2):before {
+  font-family: FontAwesome;
+  font-size: 12px;
+  color: @breadcrumb-disabled-color;
+}

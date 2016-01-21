@@ -14,7 +14,7 @@ function kkthemes_create_themes_type() {
 	$labels = array(
 		'name'                  => _x( 'WordPress Themes', 'Post Type General Name', 'kkthemes' ),
 		'singular_name'         => _x( 'WordPress Theme', 'Post Type Singular Name', 'kkthemes' ),
-		'menu_name'             => __( 'My Themes', 'kkthemes' ),
+		'menu_name'             => __( 'WordPress Themes', 'kkthemes' ),
 		'name_admin_bar'        => __( 'WordPress Themes', 'kkthemes' ),
 		'archives'              => __( 'WordPress Themes', 'kkthemes' ),
 		'parent_item_colon'     => __( 'Parent WordPress Theme:', 'kkthemes' ),
@@ -70,7 +70,7 @@ function kkthemes_create_plugins_type() {
 	$labels = array(
 		'name'                  => _x( 'WordPress Plugins', 'Post Type General Name', 'kkthemes' ),
 		'singular_name'         => _x( 'WordPress Plugins', 'Post Type Singular Name', 'kkthemes' ),
-		'menu_name'             => __( 'My Plugins', 'kkthemes' ),
+		'menu_name'             => __( 'WordPress Plugins', 'kkthemes' ),
 		'name_admin_bar'        => __( 'WordPress Plugins', 'kkthemes' ),
 		'archives'              => __( 'WordPress Plugins', 'kkthemes' ),
 		'parent_item_colon'     => __( 'Parent WordPress Plugins:', 'kkthemes' ),

@@ -11,7 +11,8 @@ function kkthemes_page_default_layout() {
 beans_add_smart_action( 'beans_before_load_document', 'kkthemes_page_setup_document' );
 
 function kkthemes_page_setup_document() {
-	beans_remove_action('kktheme_breadcrumb');
+	//Remove breadcrumb
+	beans_remove_action('beans_breadcrumb');
 
   //Remove padding from main wrapper
   beans_remove_attribute('beans_main', 'class', 'uk-block');

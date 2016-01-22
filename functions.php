@@ -41,10 +41,9 @@ add_action( 'wp', 'kkthemes_setup_document' );
 
 function kkthemes_setup_document() {
 
-	// Remove Beans breadcrumb
-	beans_remove_action('beans_breadcrumb');
-	// Remove custom Breadcrumb
-	beans_add_smart_action('beans_header_after_markup', 'kktheme_breadcrumb');
+	// Move breadcrumb just below header
+	beans_modify_action_hook('beans_breadcrumb', 'beans_header_after_markup');
+	beans_add_attribute('beans_breadcrumb', 'class', 'uk-container uk-container-center uk-hidden-small');
 
 	// Frontpage
 	if ( is_home() ) {
@@ -84,12 +83,6 @@ function kkthemes_site_title_tag() {
 		echo beans_output( 'kkthemes_site_title_tag_text', $description );
 
 	echo beans_close_markup( 'kkthemes_site_title_tag', 'div' );
-}
-
-function kktheme_breadcrumb() {
-	if ( function_exists('yoast_breadcrumb') && !is_home() ) {
-		yoast_breadcrumb('<div class="uk-container uk-container-center"><p class="uk-margin-top tm-breadcrumbs">','</p></div>');
-	}
 }
 
 function kkthemes_edit_link() {

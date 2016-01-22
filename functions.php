@@ -46,7 +46,6 @@ function kkthemes_layout_grid_settings( $layouts ) {
 		'sidebar_primary' => 3,
 		'sidebar_secondary' => 3,
 	) );
-
 }
 
 // Setup document fragements, markups and attributes
@@ -102,6 +101,17 @@ function kkthemes_edit_link() {
 		edit_post_link( __( 'Edit', 'kkthemes' ), '<div class="uk-margin-bottom-small uk-text-small uk-align-right"><i class="uk-icon-pencil-square-o"></i> ', '</div>' );
 }
 
+
+// Modify beans post meta items (filter)
+beans_add_smart_action( 'beans_post_meta_items', 'kkthemes_post_meta_items' );
+
+function kkthemes_post_meta_items( $items ) {
+
+	// Remove comments meta
+	unset( $items['comments']);
+
+	return $items;
+}
 
 /* Customize Jetpack */
 require 'include/jetpack-custom.php';

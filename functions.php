@@ -36,6 +36,19 @@ function kktheme_init() {
 }
 
 
+// Modify beans layout (filter)
+beans_add_smart_action( 'beans_layout_grid_settings', 'kkthemes_layout_grid_settings' );
+
+function kkthemes_layout_grid_settings( $layouts ) {
+
+	return array_merge( $layouts, array(
+		'grid' => 10,
+		'sidebar_primary' => 3,
+		'sidebar_secondary' => 3,
+	) );
+
+}
+
 // Setup document fragements, markups and attributes
 add_action( 'wp', 'kkthemes_setup_document' );
 

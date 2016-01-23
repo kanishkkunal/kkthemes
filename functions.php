@@ -70,8 +70,8 @@ function kkthemes_setup_document() {
 
 	if ( is_user_logged_in() ) {
 		//Add edit post link when user is logged in
-		//if( is_singular() )
-			//beans_add_smart_action('beans_post_header_before_markup', 'kkthemes_edit_link');
+		if( is_singular() )
+			beans_add_smart_action('beans_post_body_append_markup', 'kkthemes_edit_link');
 	}
 
 	//Content
@@ -99,7 +99,7 @@ function kkthemes_site_title_tag() {
 }
 
 function kkthemes_edit_link() {
-		edit_post_link( __( 'Edit', 'kkthemes' ), '<div class="uk-margin-bottom-small uk-text-small uk-align-right"><i class="uk-icon-pencil-square-o"></i> ', '</div>' );
+		edit_post_link( __( 'Edit', 'kkthemes' ), '<div class="uk-text-center"><i class="uk-icon-pencil-square-o"></i> ', '</div>' );
 }
 
 

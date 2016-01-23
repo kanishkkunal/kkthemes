@@ -28,10 +28,13 @@ function kkthemes_index_default_layout() {
 
 beans_add_smart_action( 'beans_before_load_document', 'kkthemes_archive_setup_document' );
 function kkthemes_archive_setup_document() {
-	// Remove breadcrumb if this is main archive (accessible from main menu)
-	// Other archives like Tags archive, author archive, month archive etc will continue to have breadcumb
 	if(is_main_archive()) {
+		// Remove breadcrumb if this is main archive (accessible from main menu)
+		// Other archives like Tags archive, author archive, month archive etc will continue to have breadcumb
 		beans_remove_action('beans_breadcrumb');
+
+		//Add a large Title panel in these archive pages
+		beans_add_smart_action('beans_header_after_markup', 'kkthemes_archive_title');
 	}
 
 	// Posts grid
@@ -57,6 +60,17 @@ function kkthemes_archive_setup_document() {
 	beans_add_attribute( 'beans_post_more_link', 'class', 'uk-button uk-button-primary uk-button-small' );
 	// Posts pagination
 	beans_modify_action_hook( 'beans_posts_pagination', 'beans_content_after_markup' );
+}
+
+function kkthemes_archive_title() {
+?>
+	<div class="uk-panel uk-panel-box uk-panel-space uk-text-large uk-text-center tm-branded-panel" data-markup-id="kk_themes_page_header">
+		<h1 class="uk-article-title" itemprop="headline" data-markup-id="beans_post_title">
+			<?php single_cat_title( '' ); ?>
+		</h1>
+		<p><?php echo category_description(); ?></p>
+	</div>
+<?php
 }
 
 // Resize post image (filter)

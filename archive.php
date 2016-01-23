@@ -1,7 +1,7 @@
 <?php
 
-beans_add_smart_action( 'beans_before_load_document', 'kkthemes_index_setup_document' );
-function kkthemes_index_setup_document() {
+beans_add_smart_action( 'beans_before_load_document', 'kkthemes_archive_setup_document' );
+function kkthemes_archive_setup_document() {
 	// Posts grid
 	beans_add_attribute( 'beans_content', 'class', 'tm-posts-grid uk-grid uk-grid-width-small-1-2 uk-grid-width-medium-1-2' );
 	beans_add_attribute( 'beans_content', 'data-uk-grid-margin', '' );

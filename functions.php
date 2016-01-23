@@ -45,6 +45,7 @@ function kkthemes_layout_grid_settings( $layouts ) {
 		'grid' => 10,
 		'sidebar_primary' => 3,
 		'sidebar_secondary' => 3,
+		'breakpoint' => 'large'
 	) );
 }
 

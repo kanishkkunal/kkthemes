@@ -40,7 +40,7 @@ function kkthemes_create_themes_type() {
 	);
 	$args = array(
 		'label'                 => __( 'WordPress Themes', 'kkthemes' ),
-		'description'           => __( 'WordPress Themes and their descriptions', 'kkthemes' ),
+		'description'           => __( 'Download Free, Fast and easily customizable WordPress Themes', 'kkthemes' ),
     'rewrite'               => array( 'slug' => 'wordpress-themes' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'trackbacks', 'revisions', 'page-attributes' ),
@@ -96,7 +96,7 @@ function kkthemes_create_plugins_type() {
 	);
 	$args = array(
 		'label'                 => __( 'WordPress Plugins', 'kkthemes' ),
-		'description'           => __( 'WordPress Plugins and their descriptions', 'kkthemes' ),
+		'description'           => __( 'Powerful and easy to set-up WordPress Plugins', 'kkthemes' ),
     'rewrite'               => array( 'slug' => 'wordpress-plugins' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'trackbacks', 'revisions', 'page-attributes' ),

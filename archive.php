@@ -63,9 +63,19 @@ function kkthemes_archive_title() {
 ?>
 	<div class="uk-panel uk-panel-box uk-panel-space uk-text-large uk-text-center tm-branded-panel" data-markup-id="kk_themes_page_header">
 		<h1 class="uk-article-title" itemprop="headline" data-markup-id="beans_post_title">
-			<?php single_cat_title( '' ); ?>
+			<?php single_cat_title( '' ) || post_type_archive_title( '' ); ?>
 		</h1>
-		<p><?php echo category_description(); ?></p>
+		<p>
+		<?php
+			if (is_featured_item()) {
+					$post_type = get_post_type();
+					echo get_post_type_object($post_type)->description;
+			}
+			else {
+				echo category_description();
+			}
+		?>
+		</p>
 	</div>
 <?php
 }

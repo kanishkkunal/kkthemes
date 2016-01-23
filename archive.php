@@ -10,6 +10,9 @@ function is_featured_items_archive() {
 	}
 }
 
+function is_main_archive() {
+	return is_featured_items_archive() || is_category('blog');
+}
 
 // Set the default layout
 add_filter( 'beans_default_layout', 'kkthemes_index_default_layout' );
@@ -25,6 +28,12 @@ function kkthemes_index_default_layout() {
 
 beans_add_smart_action( 'beans_before_load_document', 'kkthemes_archive_setup_document' );
 function kkthemes_archive_setup_document() {
+	// Remove breadcrumb if this is main archive (accessible from main menu)
+	// Other archives like Tags archive, author archive, month archive etc will continue to have breadcumb
+	if(is_main_archive()) {
+		beans_remove_action('beans_breadcrumb');
+	}
+
 	// Posts grid
 	beans_add_attribute( 'beans_content', 'class', 'tm-posts-grid uk-grid uk-grid-width-small-1-2 uk-grid-width-medium-1-2' );
 	beans_add_attribute( 'beans_content', 'data-uk-grid-margin', '' );

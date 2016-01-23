@@ -3,6 +3,17 @@
 /*	Helpers and utils functions for theme use
 /*-----------------------------------------------------------------------------------*/
 
+/* Is one of out theme or plugin? */
+function is_featured_item() {
+	$post_type = get_post_type();
+	if( in_array( $post_type, array( 'wordpress-themes', 'wordpress-plugins' ) ) ) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 /* Custom function to limit post content words */
 if (!function_exists('kkthemes_get_excerpt')):
     function kkthemes_get_excerpt($content)

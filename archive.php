@@ -1,13 +1,10 @@
 <?php
 
+/* Helpers and utility functions */
+require_once 'include/helpers.php';
+
 function is_featured_items_archive() {
-	$post_type = get_post_type();
-	if( in_array( $post_type, array( 'wordpress-themes', 'wordpress-plugins' ) ) ) {
-		return true;
-	}
-	else {
-		return false;
-	}
+	return is_featured_item();
 }
 
 function is_main_archive() {

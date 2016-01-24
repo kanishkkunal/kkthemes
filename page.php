@@ -16,6 +16,7 @@ function kkthemes_page_setup_document() {
 
   //Remove padding from main wrapper
   beans_remove_attribute('beans_main', 'class', 'uk-block');
+	beans_remove_attribute('beans_post', 'class', 'uk-panel-box');
 
 	//Remove container so we can have full width Page title
   beans_remove_attribute('beans_fixed_wrap[_main]', 'class', 'uk-container');

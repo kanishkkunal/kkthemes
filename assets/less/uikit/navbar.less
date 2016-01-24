@@ -1,12 +1,21 @@
 // Variables
 // ========================================================================
 
+
+@navbar-color:                                  @global-color;
 @navbar-nav-hover-color:                        @global-primary-color;
 @navbar-nav-hover-background:                   transparent;
 @navbar-nav-onclick-color:                      @navbar-nav-hover-color;
 @navbar-nav-onclick-background:                 transparent;
 @navbar-nav-active-color:                       @navbar-nav-hover-color;
 @navbar-nav-active-background:                  transparent;
+@navbar-nav-font-size:                          12.5px;
+@navbar-nav-font-family:                        @global-font-family;
+
+.uk-navbar-nav > li > a {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
 .uk-navbar-nav > li.current-post-ancestor > a {
     color: @navbar-nav-hover-color;

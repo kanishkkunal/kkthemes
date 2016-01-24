@@ -35,6 +35,7 @@ function kkthemes_archive_setup_document() {
 	}
 
 	// Posts grid
+	beans_remove_attribute('beans_post', 'class', 'uk-panel-box');
 	beans_add_attribute( 'beans_content', 'class', 'tm-posts-grid uk-grid uk-grid-width-small-1-2 uk-grid-width-medium-1-2' );
 	beans_add_attribute( 'beans_content', 'data-uk-grid-margin', '' );
 	beans_add_attribute( 'beans_content', 'data-uk-grid-match', "{target:'.uk-panel'}" );

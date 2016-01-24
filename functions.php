@@ -73,9 +73,6 @@ function kkthemes_setup_document() {
 		if( is_singular() )
 			beans_add_smart_action('beans_post_body_append_markup', 'kkthemes_edit_link');
 	}
-
-	//Content
-	beans_remove_attribute('beans_post', 'class', 'uk-panel-box');
 }
 
 
@@ -89,7 +86,7 @@ function kkthemes_site_title_tag() {
 		return;
 
 	echo beans_open_markup( 'kkthemes_site_title_tag', 'div', array(
-		'class' => 'tm-site-title-tag uk-block',
+		'class' => 'tm-site-title-tag tm-branded-panel uk-block',
 		'itemprop' => 'description'
 	) );
 

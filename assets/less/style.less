@@ -3,7 +3,7 @@
 /* Body
 =========================================================================== */
 body {
-  background-color: #eee;
+  background-color: @global-background-color;
 }
 
 
@@ -14,25 +14,25 @@ body {
    padding-top: 0;
    padding-bottom: 0;
  	 color: #fff;
-   border-bottom-color: transparent;
  }
 
  .tm-site-branding, .tm-site-branding a {
- 	font-size: 20px;
- 	font-weight: bold;
+ 	font-size: 16px;
+ 	font-weight: normal;
  	line-height: 65px;
  	height: 65px;
  	padding-right: 10px;
-	color: @global-primary-color;
   font-family: @base-heading-font-family;
-  text-transform: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 
  	img {
  		vertical-align: top;
-    height: 40px;
+    height: 36px;
     width: auto;
     margin-top: 12.5px;
     margin-right: 10px;
+    border-radius: 4px;
  	}
  }
 
@@ -46,22 +46,31 @@ body {
 /* Site Title tag on Home
  ========================================================================== */
  .tm-site-title-tag {
-  background: lighten(@global-background-color, 10);
-  font-family: @base-heading-font-family;
-  color: #fff;
-  text-align: center;
   padding-left: 15px;
   padding-right: 15px;
   font-size: 32px;
   line-height: 42px;
-  font-weight: bold;
+  font-weight: normal;
+}
+
+.tm-branded-panel {
+  background: #fff;
+  font-family: @base-heading-font-family;
+  text-align: center;
+  color: @base-body-color;
+  font-weight: normal;
+  border-bottom: 1px solid @global-border;
+
+  h1, h2, h3 {
+    font-weight: normal;
+  }
 }
 
 
 /* Main
  ========================================================================== */
 .tm-main {
-	background-color: #fff;
+  background: transparent; //@global-background-color;
 }
 
 /* Content
@@ -100,14 +109,4 @@ body {
 ============================================================================ */
 textarea {
   width: 100%;
-}
-
-.tm-branded-panel {
-  background: lighten(@global-background-color, 10);
-  color: #fff;
-
-  h1, h2, h3 {
-    color: #fff;
-    font-weight: bold;
-  }
 }

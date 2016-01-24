@@ -66,7 +66,7 @@ function kkthemes_setup_document() {
 	// Site Logo
 	beans_remove_action( 'beans_site_title_tag' );
 	//Add back site title after logo image
-	beans_add_smart_action('beans_logo_image_after_markup', 'kkthemes_site_title');
+	//beans_add_smart_action('beans_logo_image_after_markup', 'kkthemes_site_title');
 
 	if ( is_user_logged_in() ) {
 		//Add edit post link when user is logged in

@@ -73,6 +73,9 @@ function kkthemes_setup_document() {
 		if( is_singular() )
 			beans_add_smart_action('beans_post_body_append_markup', 'kkthemes_edit_link');
 	}
+
+	//content
+	beans_remove_attribute('beans_post', 'class', 'uk-panel-box');
 }
 
 

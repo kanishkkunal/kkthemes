@@ -110,6 +110,7 @@ function kkthemes_post_meta_items( $items ) {
 
 	// Remove comments meta
 	unset( $items['comments']);
+	unset( $items['author']);
 
 	return $items;
 }

@@ -19,7 +19,7 @@ function kkthemes_index_default_layout() {
 		return 'c';
 	}
 	else {
-		return 'c_sp';
+		return 'c';
 	}
 }
 
@@ -35,7 +35,7 @@ function kkthemes_archive_setup_document() {
 	}
 
 	// Posts grid
-	beans_add_attribute( 'beans_content', 'class', 'tm-posts-grid uk-grid uk-grid-width-small-1-2 uk-grid-width-medium-1-2' );
+	beans_add_attribute( 'beans_content', 'class', 'tm-posts-grid uk-grid uk-grid-width-small-1-2 uk-grid-width-medium-1-3' );
 	beans_add_attribute( 'beans_content', 'data-uk-grid-margin', '' );
 	beans_add_attribute( 'beans_content', 'data-uk-grid-match', "{target:'.uk-panel'}" );
 	beans_wrap_inner_markup( 'beans_post', 'kkthemes_post_panel', 'div', array(

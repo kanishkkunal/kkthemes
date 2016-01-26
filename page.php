@@ -1,12 +1,5 @@
 <?php
 
-
-// Set the default layout
-add_filter( 'beans_layout', 'kkthemes_page_default_layout' );
-function kkthemes_page_default_layout() {
-	return 'c';
-}
-
 // Setup document
 beans_add_smart_action( 'beans_before_load_document', 'kkthemes_page_setup_document' );
 

@@ -11,18 +11,6 @@ function is_main_archive() {
 	return is_featured_items_archive() || is_category('blog');
 }
 
-// Set the default layout
-add_filter( 'beans_default_layout', 'kkthemes_index_default_layout' );
-
-function kkthemes_index_default_layout() {
-	if( is_featured_items_archive() ) {
-		return 'c';
-	}
-	else {
-		return 'c';
-	}
-}
-
 beans_add_smart_action( 'beans_before_load_document', 'kkthemes_archive_setup_document' );
 function kkthemes_archive_setup_document() {
 	if(is_main_archive()) {

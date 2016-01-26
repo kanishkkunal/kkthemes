@@ -19,6 +19,12 @@ function beans_child_enqueue_uikit_assets() {
 
 }
 
+// Set the default layout
+add_filter( 'beans_layout', 'kkthemes_default_layout' );
+function kkthemes_default_layout() {
+	return 'c';
+}
+
 /*
  * Initialize Theme
  */

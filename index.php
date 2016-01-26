@@ -1,13 +1,5 @@
 <?php
 
-// Set the default layout
-add_filter( 'beans_default_layout', 'kkthemes_index_default_layout' );
-
-function kkthemes_index_default_layout() {
-	return 'c';
-}
-
-
 // Setup Bench
 beans_add_smart_action( 'beans_before_load_document', 'kkthemes_index_setup_document' );
 

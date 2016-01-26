@@ -41,7 +41,9 @@ function kkthemes_archive_setup_document() {
 	// Post image
 	beans_modify_action( 'beans_post_image', 'beans_post_header_before_markup', 'beans_post_image' );
 	// Post title
-	beans_add_attribute( 'beans_post_title', 'class', 'uk-h2' );
+	if(!is_featured_items_archive()) {
+		beans_add_attribute( 'beans_post_title', 'class', 'uk-h2' );
+	}
 	// Posts pagination
 	beans_modify_action_hook( 'beans_posts_pagination', 'beans_content_after_markup' );
 }

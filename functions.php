@@ -39,6 +39,7 @@ function kktheme_init() {
 	add_post_type_support('page', 'excerpt' );
 	// Register additional menus, we already have a Primary menu registered
 	register_nav_menu('social-menu', __( 'Social Menu', 'kkthemes'));
+	register_nav_menu('footer-menu', __( 'Footer Menu', 'kkthemes'));
 }
 
 
@@ -143,10 +144,30 @@ function beans_child_footer_content() {
 	<div class="tm-sub-footer uk-text-center uk-text-muted">
 		Copyright © <a href="http://kunruchcreations.com/" title="KunRuch Creations" target="_blank">KunRuch Creations</a> - All Rights Reserved
 		<br/>
-		Built with <a href="http://www.getbeans.io/" title="Beans Framework for WordPress" target="_blank">Beans</a> for <a href="https://wordpress.org" rel="external nofollow" target="_blank">WordPress</a> - Theme by <a href="https://kkthemes.com" title="WordPress Themes by Kanishk" target="_blank">KKThemes</a>
+		Built with <a href="http://www.getbeans.io/" title="Beans Framework for WordPress" target="_blank">Beans</a> for <a href="https://wordpress.org" rel="external nofollow" target="_blank">WordPress</a> - Theme by <a href="https://kkthemes.com" title="WordPress Themes by Kanishk">KKThemes</a>
 	</div>
 
 	<?php
+}
+
+
+//Customizer fields
+//Additional Header & Footer Codes (for Google Analytics)
+add_action( 'init', 'kkthemes_customization_fields' );
+function kkthemes_customization_fields() {
+	$fields = array(
+		array(
+			'id' => 'kkthemes_head_code',
+			'label' => __( 'Additional Head Code', 'kkthemes' ),
+			'type' => 'textarea',
+			'default' => ''
+		)
+	);
+	beans_register_wp_customize_options( $fields, 'kkthemes_custom_code', array( 'title' => __( 'Custom Code', 'kkthemes' ), 'priority' => 1100 ) );
+}
+add_action('beans_head_append_markup', 'kkthemes_custom_footer_code');
+function kkthemes_custom_footer_code() {
+	echo get_theme_mod( 'kkthemes_head_code', '' );
 }
 
 /* Customize Jetpack */

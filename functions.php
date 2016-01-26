@@ -82,6 +82,9 @@ function kkthemes_setup_document() {
 
 	//content
 	beans_remove_attribute('beans_post', 'class', 'uk-panel-box');
+
+	//comments
+	beans_remove_attribute('beans_comments', 'class', 'uk-panel-box');
 }
 
 

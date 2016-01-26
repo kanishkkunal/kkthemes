@@ -6,7 +6,7 @@
 /* Is one of out theme or plugin? */
 function is_featured_item() {
 	$post_type = get_post_type();
-	if( in_array( $post_type, array( 'wordpress-themes', 'wordpress-plugins' ) ) ) {
+	if(	$post_type && in_array( $post_type, array( 'wordpress-themes', 'wordpress-plugins' ) ) ) {
 		return true;
 	}
 	else {
@@ -26,8 +26,8 @@ if (!function_exists('kkthemes_get_excerpt')):
             if (!empty($excerpt)) {
                 $excerpt = strtok($excerpt, "\n"); //first para
 
-								if(strlen($excerpt) > 155) {
-									  $excerpt = preg_replace('/\s+?(\S+)?$/', '', substr($excerpt, 0, 156)) . '…';
+								if(strlen($excerpt) > 225) {
+									  $excerpt = preg_replace('/\s+?(\S+)?$/', '', substr($excerpt, 0, 226)) . '…';
 								}
             }
         }

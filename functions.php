@@ -108,6 +108,16 @@ function kkthemes_edit_link() {
 		edit_post_link( __( 'Edit', 'kkthemes' ), '<div class="uk-text-center"><i class="uk-icon-pencil-square-o"></i> ', '</div>' );
 }
 
+// Modify the read more text.
+add_filter( 'beans_post_more_link_text_output', 'kkthemes_modify_read_more' );
+function kkthemes_modify_read_more() {
+	if(is_featured_item()) {
+   	return __('Learn more', 'kkthemes');
+ 	}
+	else {
+		return __('Read more', 'kkthemes');
+	}
+}
 
 // Modify beans post meta items (filter)
 beans_add_smart_action( 'beans_post_meta_items', 'kkthemes_post_meta_items' );

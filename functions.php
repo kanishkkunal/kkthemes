@@ -136,6 +136,16 @@ function kkthemes_post_meta_items( $items ) {
 }
 
 
+// Add the footer menu
+beans_add_smart_action( 'beans_footer_prepend_markup', 'kkthemes_footer_menu' );
+function kkthemes_footer_menu() {
+	wp_nav_menu( array( 'theme_location' => 'footer-menu',
+											'container' => 'nav',
+	 										'container_class' => 'tm-footer-menu uk-navbar uk-margin-bottom',
+											'menu_class' => 'uk-navbar-nav uk-text-small'
+										));
+}
+
 // Overwrite the footer content.
 beans_modify_action_callback( 'beans_footer_content', 'beans_child_footer_content' );
 

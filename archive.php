@@ -22,16 +22,6 @@ function kkthemes_archive_setup_document() {
 		beans_add_smart_action('beans_header_after_markup', 'kkthemes_archive_title');
 	}
 
-	// Posts grid
-	beans_add_attribute( 'beans_content', 'class', 'tm-posts-grid uk-grid uk-grid-width-small-1-2 uk-grid-width-medium-1-3' );
-	beans_add_attribute( 'beans_content', 'data-uk-grid-margin', '' );
-	beans_add_attribute( 'beans_content', 'data-uk-grid-match', "{target:'.uk-panel'}" );
-	beans_wrap_inner_markup( 'beans_post', 'kkthemes_post_panel', 'div', array(
-	  'class' => 'uk-panel uk-panel-box'
-	) );
-
-	// Post article
-	beans_remove_attribute( 'beans_post', 'class', 'uk-article' );
 	// Post meta
 	beans_remove_action( 'beans_post_meta_tags' );
 	beans_remove_action( 'beans_post_meta_categories' );

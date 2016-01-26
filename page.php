@@ -25,7 +25,6 @@ function kkthemes_page_setup_document() {
 
   //Center page content and add a large bottom margin since we removed uk-block earlier from beans_main
 	beans_add_attribute('beans_post_body', 'class', 'uk-container uk-container-center tm-maxwidth-content uk-margin-large-bottom');
-	beans_add_attribute('beans_post_content', 'class', 'uk-panel-box');
 }
 
 // Load beans document

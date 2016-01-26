@@ -29,14 +29,6 @@ function kkthemes_index_setup_document() {
 
 }
 
-// Modify the read more text.
-add_filter( 'beans_post_more_link_text_output', 'kkthemes_modify_read_more' );
-
-function kkthemes_modify_read_more() {
-   return 'Learn more';
-}
-
-
 /* Helpers and utility functions */
 require_once 'include/helpers.php';
 

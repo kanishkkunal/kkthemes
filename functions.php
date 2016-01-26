@@ -134,5 +134,20 @@ function kkthemes_post_meta_items( $items ) {
 	return $items;
 }
 
+
+// Overwrite the footer content.
+beans_modify_action_callback( 'beans_footer_content', 'beans_child_footer_content' );
+
+function beans_child_footer_content() {
+	?>
+	<div class="tm-sub-footer uk-text-center uk-text-muted">
+		Copyright © <a href="http://kunruchcreations.com/" title="KunRuch Creations" target="_blank">KunRuch Creations</a> - All Rights Reserved
+		<br/>
+		Built with <a href="http://www.getbeans.io/" title="Beans Framework for WordPress" target="_blank">Beans</a> for <a href="https://wordpress.org" rel="external nofollow" target="_blank">WordPress</a> - Theme by <a href="https://kkthemes.com" title="WordPress Themes by Kanishk" target="_blank">KKThemes</a>
+	</div>
+
+	<?php
+}
+
 /* Customize Jetpack */
 require 'include/jetpack-custom.php';

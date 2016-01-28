@@ -41,7 +41,7 @@ function kkthemes_create_themes_type() {
 	$args = array(
 		'label'                 => __( 'WordPress Themes', 'kkthemes' ),
 		'description'           => __( 'Download Free, Fast and easily customizable WordPress Themes', 'kkthemes' ),
-    'rewrite'               => array( 'slug' => 'wordpress-themes' ),
+    'rewrite'               => array( 'slug' => 'wordpress' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'trackbacks', 'revisions', 'page-attributes' ),
 		'hierarchical'          => true,

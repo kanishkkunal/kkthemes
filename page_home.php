@@ -37,9 +37,15 @@ function kkthemes_site_title_tag() {
 	if ( !$description = get_bloginfo( 'description' ) )
 		return;
 
+  $tag_style = '';
+  $header_image = get_header_image();
+  if (!empty( $header_image ) )
+    $tag_style = 'background-image: url('.esc_url( $header_image ).');';
+
 	echo beans_open_markup( 'kkthemes_site_title_tag', 'div', array(
 		'class' => 'tm-site-title-tag tm-branded-panel uk-block',
-		'itemprop' => 'description'
+		'itemprop' => 'description',
+    'style' => $tag_style
 	) );
 
 		echo beans_output( 'kkthemes_site_title_tag_text', $description );

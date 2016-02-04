@@ -60,6 +60,8 @@ function kkthemes_layout_grid_settings( $layouts ) {
 add_action( 'wp', 'kkthemes_setup_document' );
 
 function kkthemes_setup_document() {
+	beans_remove_action('beans_header_image');
+	//remove default header image
 
 	// Move breadcrumb just below header
 	beans_modify_action_hook('beans_breadcrumb', 'beans_header_after_markup');

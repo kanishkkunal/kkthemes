@@ -15,9 +15,14 @@ function kkthemes_page_setup_document() {
   beans_remove_attribute('beans_fixed_wrap[_main]', 'class', 'uk-container');
   beans_remove_attribute('beans_fixed_wrap[_main]', 'class', '-center');
 
+  $tag_style = '';
+  $header_image = get_header_image();
+  if (!empty( $header_image ) )
+    $tag_style = 'background-image: url('.esc_url( $header_image ).');';
 	//Add styling to Page header
 	beans_wrap_inner_markup( 'beans_post_header', 'kk_themes_page_header', 'div', array(
-	  'class' => 'uk-panel uk-panel-box uk-panel-space uk-text-large uk-text-center uk-margin-bottom tm-branded-panel'
+	  'class' => 'uk-panel uk-panel-box uk-panel-space uk-text-large uk-text-center uk-margin-bottom tm-branded-panel',
+		'style' => $tag_style
 	) );
 
 	// Display any Post excerpts below Page title.

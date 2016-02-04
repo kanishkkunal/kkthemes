@@ -20,9 +20,14 @@ function kkthemes_index_setup_document() {
 }
 
 function kkthemes_archive_title() {
+
+	  $tag_style = '';
+	  $header_image = get_header_image();
+	  if (!empty( $header_image ) )
+	    $tag_style = 'background-image: url('.esc_url( $header_image ).');';
 ?>
-	<div class="uk-panel uk-panel-box uk-panel-space uk-text-large uk-text-center tm-branded-panel" data-markup-id="kk_themes_page_header">
-		<h1 class="uk-article-title" itemprop="headline" data-markup-id="beans_post_title">
+	<div class="uk-panel uk-panel-box uk-panel-space uk-text-large uk-text-center tm-branded-panel" style="<?php echo $tag_style; ?>">
+		<h1 class="uk-article-title" itemprop="headline">
 			<?php single_cat_title( '' ) || post_type_archive_title( '' ); ?>
 		</h1>
 		<p>

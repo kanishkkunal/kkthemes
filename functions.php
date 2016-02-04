@@ -65,11 +65,6 @@ function kkthemes_setup_document() {
 	beans_modify_action_hook('beans_breadcrumb', 'beans_header_after_markup');
 	beans_add_attribute('beans_breadcrumb', 'class', 'uk-container uk-container-center uk-hidden-small');
 
-	// Frontpage
-	if ( is_home() ) {
-		beans_add_smart_action('beans_header_after_markup', 'kkthemes_site_title_tag');
-	}
-
 	// Site Logo
 	beans_remove_action( 'beans_site_title_tag' );
 	//Add back site title after logo image
@@ -78,7 +73,7 @@ function kkthemes_setup_document() {
 	if ( is_user_logged_in() ) {
 		//Add edit post link when user is logged in
 		if( is_singular() )
-			beans_add_smart_action('beans_post_body_append_markup', 'kkthemes_edit_link');
+			beans_add_smart_action('beans_post_header_prepend_markup', 'kkthemes_edit_link');
 	}
 
 	//content
@@ -93,23 +88,15 @@ function kkthemes_site_title() {
 	echo beans_output( 'beans_site_title_text', get_bloginfo( 'name' ) );
 }
 
-function kkthemes_site_title_tag() {
-	// Stop here if there isn't a description.
-	if ( !$description = get_bloginfo( 'description' ) )
-		return;
-
-	echo beans_open_markup( 'kkthemes_site_title_tag', 'div', array(
-		'class' => 'tm-site-title-tag tm-branded-panel uk-block',
-		'itemprop' => 'description'
-	) );
-
-		echo beans_output( 'kkthemes_site_title_tag_text', $description );
-
-	echo beans_close_markup( 'kkthemes_site_title_tag', 'div' );
+function kkthemes_edit_link() {
+		edit_post_link( __( 'Edit', 'kkthemes' ), '<div class="uk-align-right"><i class="uk-icon-pencil-square-o"></i> ', '</div>' );
 }
 
-function kkthemes_edit_link() {
-		edit_post_link( __( 'Edit', 'kkthemes' ), '<div class="uk-text-center"><i class="uk-icon-pencil-square-o"></i> ', '</div>' );
+// Resize post image (filter)
+beans_add_smart_action( 'beans_edit_post_image_args', 'kkthemes_index_post_image_args' );
+function kkthemes_index_post_image_args( $args ) {
+	$args['resize'] = array( 525, 305, true); //430, 250
+	return $args;
 }
 
 // Modify the read more text.

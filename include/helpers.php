@@ -14,6 +14,10 @@ function is_featured_item() {
 	}
 }
 
+function is_main_archive() {
+	return is_featured_item() || is_category('blog');
+}
+
 /* Custom function to limit post content words */
 if (!function_exists('kkthemes_get_excerpt')):
     function kkthemes_get_excerpt($content)

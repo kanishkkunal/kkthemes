@@ -43,7 +43,7 @@ function kkthemes_site_title_tag() {
     $tag_style = 'background-image: url('.esc_url( $header_image ).');';
 
 	echo beans_open_markup( 'kkthemes_site_title_tag', 'div', array(
-		'class' => 'tm-site-title-tag tm-branded-panel uk-block',
+		'class' => 'tm-site-title-tag tm-branded-panel uk-block uk-margin-large-bottom',
 		'itemprop' => 'description',
     'style' => $tag_style
 	) );

@@ -26,7 +26,7 @@ function kkthemes_archive_title() {
 	  if (!empty( $header_image ) )
 	    $tag_style = 'background-image: url('.esc_url( $header_image ).');';
 ?>
-	<div class="uk-panel uk-panel-box uk-panel-space uk-text-large uk-text-center tm-branded-panel" style="<?php echo $tag_style; ?>">
+	<div class="uk-panel uk-panel-box uk-panel-space uk-text-large uk-text-center tm-branded-panel uk-margin-large-bottom" style="<?php echo $tag_style; ?>">
 		<h1 class="uk-article-title" itemprop="headline">
 			<?php single_cat_title( '' ) || post_type_archive_title( '' ); ?>
 		</h1>

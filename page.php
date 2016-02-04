@@ -21,7 +21,7 @@ function kkthemes_page_setup_document() {
     $tag_style = 'background-image: url('.esc_url( $header_image ).');';
 	//Add styling to Page header
 	beans_wrap_inner_markup( 'beans_post_header', 'kk_themes_page_header', 'div', array(
-	  'class' => 'uk-panel uk-panel-box uk-panel-space uk-text-large uk-text-center uk-margin-bottom tm-branded-panel',
+	  'class' => 'uk-panel uk-panel-box uk-panel-space uk-text-large uk-text-center uk-margin-large-bottom tm-branded-panel',
 		'style' => $tag_style
 	) );
 

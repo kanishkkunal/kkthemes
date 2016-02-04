@@ -97,7 +97,7 @@ function kkthemes_create_plugins_type() {
 	$args = array(
 		'label'                 => __( 'WordPress Plugins', 'kkthemes' ),
 		'description'           => __( 'Powerful and easy to set-up WordPress Plugins', 'kkthemes' ),
-    'rewrite'               => array( 'slug' => 'wordpress-plugins' ),
+    'rewrite'               => array( 'slug' => 'plugins' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'trackbacks', 'revisions', 'page-attributes' ),
 		'hierarchical'          => true,

@@ -29,7 +29,7 @@ function kkthemes_theme_home_query_args() {
 }
 
 function kkthemes_homepage_contents() {
-  echo '<div class="uk-text-center uk-margin-large-top"><a class="uk-button uk-button-primary uk-button-large" href="/wordpress">Browse All WordPress Themes</a></div>';
+  echo '<div class="uk-text-center uk-margin-large-top uk-margin-large-bottom"><a class="uk-button uk-button-primary uk-button-large" href="/wordpress">Browse All WordPress Themes</a></div>';
 }
 
 function kkthemes_site_title_tag() {

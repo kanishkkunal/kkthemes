@@ -13,7 +13,7 @@ function kkthemes_post_view($featured_items = false) {
 
   	if(is_featured_item() || $featured_items) {
       //More button
-      beans_add_attribute('beans_post_more_link', 'class', 'uk-button uk-button-primary');
+      beans_add_attribute('beans_post_more_link', 'class', 'uk-button uk-button-large uk-margin-top');
   	}
   	else {
       // Post title

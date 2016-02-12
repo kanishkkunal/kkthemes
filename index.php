@@ -30,30 +30,17 @@ function kkthemes_archive_title() {
 		<h1 class="uk-article-title" itemprop="headline">
 			<?php single_cat_title( '' ) || post_type_archive_title( '' ); ?>
 		</h1>
-		<p>
 		<?php
 			if (is_featured_item()) {
 					$post_type = get_post_type();
-					echo get_post_type_object($post_type)->description;
+					echo '<p>'.get_post_type_object($post_type)->description.'</p>';
 			}
 			else {
 				echo category_description();
 			}
 		?>
-		</p>
 	</div>
 <?php
-}
-
-
-// Auto generate summary of Post content and read more button
-beans_add_smart_action( 'the_content', 'kkthemes_post_content' );
-function kkthemes_post_content( $content ) {
-    $output = beans_open_markup( 'kkthemes_post_content', 'p' );
-    	$output .= beans_output( 'kkthemes_post_content_summary', kkthemes_get_excerpt( $content ) );
-   	$output .= beans_close_markup( 'kkthemes_post_content', 'p' );
-		$output .= '<p>'.beans_post_more_link().'</p>';
-   	return $output;
 }
 
 // Load beans document

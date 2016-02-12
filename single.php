@@ -11,7 +11,6 @@ function kkthemes_single_setup_document() {
 
 		//Center page content and add a large bottom margin since we removed uk-block earlier from beans_main
 		beans_add_attribute('beans_main', 'class', 'tm-maxwidth-content');
-
 }
 
 // Load beans document

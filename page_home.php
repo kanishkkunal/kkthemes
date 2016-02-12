@@ -23,13 +23,13 @@ function kkthemes_homepage_setup_document() {
 function kkthemes_theme_home_query_args() {
   $args =  array(
 		'post_type' => 'wordpress-themes',
-		'posts_per_page' => 4
+		'post_name__in' => array('fastr')
 	);
   return $args;
 }
 
 function kkthemes_homepage_contents() {
-  echo '<div class="uk-text-center"><a class="uk-button uk-button-primary uk-button-large" href="/wordpress">View All WordPress Themes</a></div>';
+  echo '<div class="uk-text-center uk-margin-large-top"><a class="uk-button uk-button-primary uk-button-large" href="/wordpress">Browse All WordPress Themes</a></div>';
 }
 
 function kkthemes_site_title_tag() {

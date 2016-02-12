@@ -74,7 +74,7 @@ function kkthemes_setup_document() {
 
 	if ( is_user_logged_in() ) {
 		//Add edit post link when user is logged in
-		if( is_singular() )
+		if( is_singular() && !is_page_template('page_home.php') )
 			beans_add_smart_action('beans_post_header_prepend_markup', 'kkthemes_edit_link');
 	}
 
@@ -97,7 +97,7 @@ function kkthemes_edit_link() {
 // Resize post image (filter)
 beans_add_smart_action( 'beans_edit_post_image_args', 'kkthemes_index_post_image_args' );
 function kkthemes_index_post_image_args( $args ) {
-	$args['resize'] = array( 525, 305, true); //430, 250
+	$args['resize'] = array( 525, 337, true); //430, 250 - 700x450
 	return $args;
 }
 

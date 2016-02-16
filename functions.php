@@ -12,6 +12,9 @@ require 'include/post-types.php';
 add_action( 'beans_uikit_enqueue_scripts', 'beans_child_enqueue_uikit_assets' );
 
 function beans_child_enqueue_uikit_assets() {
+	//Enqueue fonts
+	wp_enqueue_style( 'tm-google-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600', false );
+
 	// Enqueue uikit overwrite theme folder
 	beans_uikit_enqueue_theme( 'kkthemes', get_stylesheet_directory_uri() . '/assets/less/uikit' );
 
